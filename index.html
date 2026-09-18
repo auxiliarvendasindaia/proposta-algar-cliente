@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230B1512'/><circle cx='16' cy='16' r='7' fill='%23F3C57E'/></svg>">
+<title>Algar no Mediterrâneo Indaiá</title>
+<meta name="description" content="Mediterrâneo Indaiá, na Praia da Joaquina: a proposta de ambientação para o encontro Algar, em imagens, de dia, ao pôr do sol e à noite.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300;9..144,500;9..144,300,100&family=Figtree:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#0B1512;--bg2:#12201A;--bg3:#1A2A23;--ink:#F3EEE6;--ink2:#B7C1B9;--ink3:#7E8B84;--line:rgba(243,238,230,.14);--verde:#2BC47E;--ambar:#F3C57E;--shadow:0 30px 80px -30px rgba(0,0,0,.8)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Figtree,"Segoe UI",system-ui,sans-serif;font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2{font-family:Fraunces,Georgia,serif;font-weight:300;letter-spacing:-.015em;line-height:1;margin:0;text-wrap:balance;font-variation-settings:"SOFT" 100,"opsz" 144}
+h1{font-size:clamp(3rem,9vw,8.5rem)} h1 strong{font-weight:500}
+h2{font-size:clamp(2rem,5vw,4rem)}
+p{margin:0} img{display:block;max-width:100%} button{font:inherit}
+:focus-visible{outline:2px solid var(--ambar);outline-offset:3px}
+.eyebrow{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ambar);font-weight:600}
+.wrap{width:min(1320px,calc(100% - 2*clamp(16px,4vw,56px)));margin-inline:auto}
+.nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px clamp(16px,4vw,56px);background:linear-gradient(180deg,rgba(11,21,18,.9),rgba(11,21,18,0))}
+.nav img{height:30px;width:auto}
+.nav .lugar{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
+.abertura{position:relative;min-height:min(92vh,980px);display:grid;align-items:end;isolation:isolate;margin-top:-64px}
+.abertura .bg{position:absolute;inset:0;z-index:-1}
+.abertura .bg img{width:100%;height:100%;object-fit:cover}
+.abertura .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,21,18,.12) 0%,rgba(11,21,18,.05) 40%,rgba(11,21,18,.9) 100%)}
+.abertura .wrap{padding:clamp(40px,8vw,120px) 0 clamp(40px,7vw,90px);display:grid;gap:18px}
+.abertura .sub{font-family:Fraunces,serif;font-size:clamp(1.15rem,2.2vw,1.7rem);font-weight:300;color:var(--ink2);max-width:30ch}
+.abertura .dica{margin-top:18px;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3);display:flex;align-items:center;gap:10px}
+.abertura .dica i{display:inline-block;width:1px;height:38px;background:var(--ambar);animation:pulsa 1.8s ease-in-out infinite}
+@keyframes pulsa{0%,100%{opacity:.2;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+section{padding:clamp(48px,8vw,120px) 0}
+.cap-h{display:grid;gap:10px;margin-bottom:clamp(20px,3vw,36px)}
+.cap-h p.l{color:var(--ink2);font-size:1.08rem;max-width:56ch}
+.pilha{display:grid;gap:16px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:820px){.grid2,.grid3{grid-template-columns:1fr}}
+.foto{margin:0;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);background:var(--bg3)}
+.foto img{width:100%;aspect-ratio:16/9;object-fit:cover;cursor:zoom-in;transition:transform .6s ease}
+.foto:hover img{transform:scale(1.015)}
+.foto-larga{grid-column:1/-1}
+.hoteis{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+@media (max-width:700px){.hoteis{grid-template-columns:1fr}}
+.hotel{padding:18px 20px;border:1px solid var(--line);border-radius:10px;background:var(--bg2);display:grid;gap:4px}
+.hotel b{font-family:Fraunces,serif;font-weight:500;font-size:1.25rem}
+.hotel span{color:var(--ink2);font-size:.95rem}
+/* cenas por horario */
+.cena{position:relative;margin:0;aspect-ratio:16/9;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);background:var(--bg3)}
+.cena img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.1s ease;cursor:zoom-in}
+body[data-hora="dia"] .cena img[data-hora="dia"],body[data-hora="pordosol"] .cena img[data-hora="pordosol"],body[data-hora="noite"] .cena img[data-hora="noite"]{opacity:1;position:absolute}
+.cena figcaption{position:absolute;left:16px;bottom:14px;padding:6px 12px;border-radius:999px;background:rgba(11,21,18,.65);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);pointer-events:none}
+.hora{position:sticky;top:14px;z-index:15;display:flex;justify-content:center;pointer-events:none;margin-bottom:18px}
+.hora div{pointer-events:auto;display:flex;gap:2px;padding:4px;border-radius:999px;background:rgba(18,32,26,.85);border:1px solid var(--line);backdrop-filter:blur(8px);box-shadow:var(--shadow)}
+.hora button{border:0;background:transparent;color:var(--ink2);padding:10px 18px;border-radius:999px;cursor:pointer;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.hora button.on{background:var(--ambar);color:#1A1207;font-weight:600}
+.hora svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+/* trilho */
+.tr{position:relative}
+.tr-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:6px}
+.tr-track::-webkit-scrollbar{display:none}
+.tr-item{flex:0 0 min(78vw,860px);scroll-snap-align:start;margin:0;display:grid;gap:8px}
+.tr-item img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;cursor:zoom-in;box-shadow:var(--shadow)}
+.tr-item figcaption{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3)}
+.tr-nav{position:absolute;top:calc(50% - 28px);width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(11,21,18,.75);color:var(--ink);font-size:1.6rem;line-height:1;cursor:pointer;display:grid;place-items:center}
+.tr-prev{left:8px}.tr-next{right:8px}
+/* vistas de topo */
+.tps{display:grid;gap:28px}
+.tp{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:18px;align-items:start}
+@media (max-width:920px){.tp{grid-template-columns:1fr}}
+.tp-fig{position:relative;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);background:#E9E3D6}
+.tp-fig img{width:100%;height:auto}
+.tp-fig svg{position:absolute;inset:0;width:100%;height:100%}
+.pt{cursor:default}.pt-link{cursor:pointer}
+.pt-halo{fill:var(--verde);opacity:.22;transition:opacity .2s,r .2s}
+.pt-dot{fill:var(--verde);stroke:#fff;stroke-width:5}
+.pt text{font:700 30px Figtree,sans-serif;fill:#08140F;pointer-events:none}
+.pt.on .pt-halo,.pt:hover .pt-halo,.pt:focus-visible .pt-halo{opacity:.55;r:56}
+.tp-leg{position:sticky;top:16px}
+.tp-t{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin-bottom:10px}
+.tp-leg ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.tp-leg li{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border-radius:8px;background:var(--bg2);border:1px solid var(--line);font-size:.93rem;color:var(--ink2);line-height:1.3}
+.tp-leg li.on,.tp-leg li:hover{border-color:var(--verde);color:var(--ink)}
+.tp-leg b{flex:0 0 26px;height:26px;border-radius:50%;background:var(--verde);color:#08140F;display:grid;place-items:center;font-size:.8rem}
+.player{aspect-ratio:16/9;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);background:#000}
+.player video{width:100%;height:100%;display:block}
+/* editor de layout (embutido) */
+.ed-frame{border-radius:14px;overflow:hidden;box-shadow:var(--shadow);background:#f7f5f1;height:min(1180px,calc(100vh + 240px))}
+.ed-frame iframe{width:100%;height:100%;border:0;display:block}
+@media (max-width:820px){.ed-frame{height:1080px}}
+.ed-abrir{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:12px;font-size:.95rem}
+.ed-abrir a{color:var(--ambar)}
+
+.ed-card{display:grid;position:relative;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);text-decoration:none;color:var(--ink);background:var(--bg3)}
+.ed-card img{width:100%;aspect-ratio:16/8.4;object-fit:cover;transition:transform .6s ease}
+.ed-card:hover img{transform:scale(1.02)}
+.ed-card-txt{position:absolute;left:0;right:0;bottom:0;padding:22px 24px;display:grid;gap:2px;background:linear-gradient(180deg,rgba(11,21,18,0),rgba(11,21,18,.88))}
+.ed-card-txt b{font-family:Fraunces,serif;font-weight:500;font-size:1.6rem}
+.ed-card-txt span{color:var(--ink2);font-size:.9rem}
+.ed-mini{display:grid;gap:8px;text-decoration:none;color:var(--ink2);font-size:.85rem}
+.ed-mini img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;box-shadow:var(--shadow)}
+/* editor de layout */
+.ed{display:grid;gap:14px}
+.ed-top{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.abas{display:flex;gap:2px;padding:4px;border-radius:999px;background:var(--bg3);width:max-content}
+.abas button{border:0;background:transparent;color:var(--ink2);padding:9px 16px;border-radius:999px;cursor:pointer;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase}
+.abas button.on{background:var(--ambar);color:#1A1207;font-weight:600}
+.ed-tools{display:flex;flex-wrap:wrap;gap:8px}
+.ed-tools button,.ed-add button{border:1px solid var(--line);background:var(--bg2);color:var(--ink);padding:9px 14px;border-radius:999px;cursor:pointer;font-size:.9rem}
+.ed-tools button:hover,.ed-add button:hover{border-color:var(--verde)}
+.ed-tools button.p{background:var(--verde);color:#08140F;border-color:var(--verde);font-weight:600}
+.ed-add{display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--ink3);font-size:.85rem}
+.ed-wrap{position:relative;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);background:#E9E3D6}
+.ed-wrap img{width:100%;height:auto;display:block;user-select:none;-webkit-user-drag:none}
+.ed-wrap svg{position:absolute;inset:0;width:100%;height:100%;touch-action:none}
+.it{cursor:grab}.it.sel .it-f{stroke:#F3C57E;stroke-width:6}.it.fixo{cursor:default;pointer-events:none}
+.it-f{fill:rgba(43,196,126,.55);stroke:#0B1512;stroke-width:3}
+.it-f.palco{fill:rgba(20,30,26,.9)}.it-f.plateia{fill:rgba(43,196,126,.35)}.it-f.mesa,.it-f.bistro{fill:rgba(243,197,126,.85)}
+.it-f.lounge{fill:rgba(243,238,230,.9)}.it-f.jardineira{fill:rgba(255,255,255,.95)}.it-f.totem{fill:#1FB56C}.it-f.bar,.it-f.buffet{fill:rgba(150,112,72,.95)}
+.it-f.ativacao{fill:rgba(78,142,62,.85)}.it-f.portico{fill:#1FB56C}.it-f.fogueira{fill:rgba(255,120,40,.9)}.it-f.roda{fill:rgba(198,168,108,.35);stroke-dasharray:14 10}
+.it-f.dj{fill:rgba(20,30,26,.9)}.it-f.estacao{fill:#1FB56C}.it-f.tapete{fill:rgba(206,182,138,.9)}.it-f.estrutura{fill:none;stroke:rgba(11,21,18,.55);stroke-dasharray:12 10}
+.it text{font:600 22px Figtree,sans-serif;fill:#0B1512;pointer-events:none;text-anchor:middle}
+.it-f.palco~text,.it-f.dj~text,.it-f.bar~text,.it-f.buffet~text,.it-f.totem~text,.it-f.portico~text,.it-f.estacao~text,.it-f.ativacao~text{fill:#F3EEE6}
+.ed-foot{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;color:var(--ink2);font-size:.92rem}
+.ed-msg{padding:10px 14px;border-radius:8px;background:var(--bg2);border:1px solid var(--line);font-size:.9rem;display:none}
+.ed-msg.on{display:block}
+.ed-msg input{width:100%;margin-top:8px;padding:9px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;font-size:.85rem}
+.aviso{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
+.cena .ilus{position:absolute;right:14px;bottom:14px;padding:5px 10px;border-radius:999px;background:rgba(11,21,18,.55);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);pointer-events:none}
+/* investimento */
+.inv{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:22px;align-items:start}
+@media (max-width:980px){.inv{grid-template-columns:1fr}}
+.inv-bl{display:grid;gap:10px;padding:18px 0;border-top:1px solid var(--line)}
+.inv-bl:first-child{border-top:0;padding-top:0}
+.inv-bl h3{margin:0;font-family:Fraunces,serif;font-weight:500;font-size:1.35rem}
+.inv-bl .sub{color:var(--ink3);font-size:.9rem}
+.nivs{display:flex;flex-wrap:wrap;gap:8px}
+.niv{border:1px solid var(--line);background:var(--bg2);color:var(--ink);padding:10px 14px;border-radius:12px;cursor:pointer;text-align:left;display:grid;gap:2px;min-width:132px}
+.niv b{font-weight:600}.niv span{color:var(--ink2);font-size:.86rem}.niv small{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)}
+.niv.on{border-color:var(--ambar);background:rgba(243,197,126,.12)}
+.niv.on span{color:var(--ambar)}
+.det details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:var(--bg2)}
+.det summary{cursor:pointer;color:var(--ink2);font-size:.92rem}
+.det .inc{display:grid;gap:8px;margin-top:10px;color:var(--ink2);font-size:.9rem;line-height:1.45}
+.det .inc b{color:var(--ink)}.det .inc small{color:var(--ink3)}
+.step{display:flex;align-items:center;gap:10px}
+.step button{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--bg2);color:var(--ink);font-size:1.3rem;cursor:pointer}
+.step input,.step output{width:80px;text-align:center;font:600 1.3rem Figtree,sans-serif;color:var(--ink);background:transparent;border:0}
+.step output{display:inline-block;width:44px}
+.qts{display:grid;gap:10px}
+.qt{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg2)}
+.qt .n{display:grid;gap:2px}.qt .n b{font-weight:600}.qt .n span{color:var(--ink3);font-size:.86rem}
+.inv-res{position:sticky;top:16px;padding:20px;border-radius:14px;background:var(--bg2);border:1px solid var(--line);display:grid;gap:12px}
+.inv-res .tot{display:grid;gap:2px;padding-top:12px;border-top:1px solid var(--line)}
+.inv-res .tot b{font-family:Fraunces,serif;font-weight:500;font-size:2.3rem;line-height:1}
+.inv-res .tot span{color:var(--ink2);font-size:.92rem}
+.inv-t{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ambar);margin:8px 0 4px}
+.ln{display:flex;justify-content:space-between;gap:12px;font-size:.92rem;color:var(--ink2);padding:3px 0}
+.ln b{color:var(--ink);font-weight:500;white-space:nowrap}
+.inv-acoes{display:flex;flex-wrap:wrap;gap:8px}
+.inv-acoes button{border:1px solid var(--line);background:var(--bg3);color:var(--ink);padding:10px 14px;border-radius:999px;cursor:pointer;font-size:.9rem}
+.inv-acoes button.p{background:var(--ambar);color:#1A1207;border-color:var(--ambar);font-weight:600}
+.inv-nota{color:var(--ink3);font-size:.82rem}
+.inv-msg{display:none;padding:10px 12px;border-radius:8px;background:var(--bg3);font-size:.88rem}
+.inv-msg.on{display:block}
+.equipe{grid-column:1/-1;order:-1;margin-bottom:8px;padding:18px 20px;border:1px dashed var(--ambar);border-radius:14px;background:var(--bg2);display:grid;gap:12px}
+.eqg{display:flex;flex-wrap:wrap;gap:10px 18px}
+.eqc{display:grid;gap:4px;font-size:.8rem;color:var(--ink3)}
+.eqc input,.eqc select{font:inherit;font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:7px 9px;width:9.5em}
+.eqc input[type=date]{width:11em}
+.eqd{display:flex;gap:6px}.eqd select{width:5em}
+.eqo{display:flex;flex-wrap:wrap;gap:10px 14px;padding:8px 10px;border:1px solid var(--line);border-radius:10px}.eqo .eqc input[type=text]{width:22em}
+.eqp summary{cursor:pointer;color:var(--ink2);font-size:.92rem}
+.eqp .eqg{margin-top:10px}
+.eqf{padding-top:10px;border-top:1px dashed var(--line)}
+.eqfg{display:flex;flex-wrap:wrap;gap:8px 26px}
+.eqfg p{margin:0;display:grid;gap:2px}.eqfg span{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}.eqfg b{font-size:1.05rem}
+.eqfg b.ruim,.eqa{color:#FF7A7A}.eqa{font-weight:600;font-size:.9rem;margin-top:8px}
+.inv-msg input,.inv-msg textarea{width:100%;margin-top:8px;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;font-size:.84rem}
+footer{padding:48px 0 96px;border-top:1px solid var(--line);color:var(--ink3);font-size:.9rem;display:grid;gap:14px}
+footer img{height:34px;width:auto}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(4,10,8,.96);display:none;place-items:center;padding:24px}
+.lb.on{display:grid}
+.lb img{max-width:100%;max-height:86vh;border-radius:6px;box-shadow:var(--shadow)}
+.lb .lb-cap{position:absolute;bottom:22px;left:0;right:0;text-align:center;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
+.lb button{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:rgba(11,21,18,.7);color:var(--ink);font-size:1.8rem;cursor:pointer}
+.lb .lb-prev{left:16px}.lb .lb-next{right:16px}.lb .lb-x{top:18px;right:18px;transform:none;font-size:1.3rem}
+#irp{position:fixed;right:18px;bottom:18px;z-index:40;display:none;flex-direction:column;align-items:flex-end;gap:8px}
+#irp.vis{display:flex}
+#irp>button{border:1px solid var(--line);background:rgba(11,21,18,.88);color:var(--ink);padding:12px 18px;border-radius:999px;cursor:pointer;font-weight:600;box-shadow:var(--shadow)}
+#irp ul{list-style:none;margin:0;padding:8px;background:rgba(18,32,26,.97);border:1px solid var(--line);border-radius:12px;display:none;flex-direction:column;gap:2px;min-width:220px}
+#irp.aberto ul{display:flex}
+#irp ul a{display:block;padding:9px 12px;border-radius:8px;color:var(--ink);text-decoration:none;font-size:.95rem}
+#irp ul a:hover{background:var(--bg3)}
+.qt{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:16px}
+.qt .n{min-width:0}
+.qt .qtd{font-weight:600;font-size:1.25rem;white-space:nowrap}
+.qt .qtd small{font-size:.76rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)}
+.inv-res .tot span:last-child{color:var(--ambar)}
+.inv-nota b{color:var(--ink)}
+.ed-link{margin:0;text-align:center}
+.ed-link a{display:inline-block;padding:14px 24px;border-radius:999px;background:var(--bg2);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:600}
+.ed-link a:hover{border-color:var(--ambar);color:var(--ambar)}
+@media (max-width:680px){
+.qt{grid-template-columns:minmax(0,1fr);row-gap:12px;align-items:start}
+.qt .qtd{justify-self:start}
+}
+</style>
+
+</head>
+<body>
+<nav class="nav"><img src="assets/logo-indaia.webp" alt="Indaiá Eventos"><span class="lugar">Mediterrâneo Indaiá · Praia da Joaquina</span></nav>
+
+<header class="abertura" id="abertura">
+  <div class="bg"><img src="fal-web/07-lounges-mar-pordosol.jpg" alt=""></div>
+  <div class="wrap">
+    <p class="eyebrow">Mediterrâneo Indaiá · Praia da Joaquina · Florianópolis</p>
+    <h1>Algar,<br><strong>seu novo nome pede um novo cenário.</strong></h1>
+    <p class="sub">Um lugar exclusivo, de frente para o mar, do fim de tarde até a última música.</p>
+    <p class="dica"><i></i> Role para entrar</p>
+    <p class="aviso">Imagens meramente ilustrativas, geradas a partir do projeto 3D do espaço</p>
+  </div>
+</header>
+
+<section id="joaquina">
+  <div class="wrap">
+    <div class="cap-h"><p class="eyebrow">O lugar</p><h2>Praia da Joaquina</h2><p class="l">Uma das praias mais famosas de Florianópolis: mar aberto, ondas de surfe, dunas e o costão de pedras. O Mediterrâneo Indaiá fica de frente para ela.</p></div>
+    <div class="pilha">
+      <figure class="foto foto-larga"><img src="fal-web/joaquina-por-do-sol.jpg" alt="Pôr do sol na Joaquina" loading="lazy" data-lb="fal-web/joaquina-por-do-sol.jpg" data-cap="Pôr do sol na Joaquina"></figure>
+      <div class="grid3">
+        <figure class="foto "><img src="fal-web/joaquina-mar.jpg" alt="A praia vista de cima" loading="lazy" data-lb="fal-web/joaquina-mar.jpg" data-cap="A praia vista de cima"></figure>
+        <figure class="foto "><img src="fal-web/joaquina-dunas.jpg" alt="As dunas" loading="lazy" data-lb="fal-web/joaquina-dunas.jpg" data-cap="As dunas"></figure>
+        <figure class="foto "><img src="fal-web/joaquina-surf.jpg" alt="O mar da Joaquina" loading="lazy" data-lb="fal-web/joaquina-surf.jpg" data-cap="O mar da Joaquina"></figure>
+      </div>
+    </div>
+    <div class="hoteis">
+      <div class="hotel"><b>Joaquina Beach Hotel</b><span>A um minuto da praia, com piscina e café da manhã. Hospedagem da equipe a poucos passos do evento.</span></div>
+      <div class="hotel"><b>Cris Hotel</b><span>De frente para a praia, para quem quer acordar com o mar e a brisa da Joaquina.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="encontro">
+  <div class="wrap">
+    <div class="cap-h"><p class="eyebrow">O encontro</p><h2>Escolha a hora do dia</h2><p class="l">As mesmas cenas de dia, ao pôr do sol e à noite. O botão acompanha você pela página.</p></div>
+    <div class="hora"><div role="group" aria-label="Hora do dia">
+      <button type="button" data-h="dia"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg>Dia</button>
+      <button type="button" class="on" data-h="pordosol"><svg viewBox="0 0 24 24"><path d="M3 17h18M5 21h14M12 9a4 4 0 0 0-4 4h8a4 4 0 0 0-4-4zM12 3v3M4.9 6.9 7 9M19.1 6.9 17 9"/></svg>Pôr do sol</button>
+      <button type="button" data-h="noite"><svg viewBox="0 0 24 24"><path d="M21 13.5A8.5 8.5 0 0 1 10.5 3a7 7 0 1 0 10.5 10.5z"/></svg>Noite</button>
+    </div></div>
+    <div class="pilha">
+      <figure class="cena "><img src="fal-web/14-portico-dia.jpg" data-hora="dia" alt="Chegada · Dia" loading="lazy" data-lb="fal-web/14-portico-dia.jpg" data-cap="Chegada"><img src="fal-web/14-portico-pordosol.jpg" data-hora="pordosol" alt="Chegada · Pôr do sol" loading="lazy" data-lb="fal-web/14-portico-pordosol.jpg" data-cap="Chegada"><img src="fal-web/14-portico-noite.jpg" data-hora="noite" alt="Chegada · Noite" loading="lazy" data-lb="fal-web/14-portico-noite.jpg" data-cap="Chegada"><figcaption>Chegada</figcaption><span class="ilus">Imagem ilustrativa</span></figure>
+      <figure class="cena "><img src="fal-web/02-plateia-teto-dia.jpg" data-hora="dia" alt="Plateia sob o voal · Dia" loading="lazy" data-lb="fal-web/02-plateia-teto-dia.jpg" data-cap="Plateia sob o voal"><img src="fal-web/02-plateia-teto-pordosol.jpg" data-hora="pordosol" alt="Plateia sob o voal · Pôr do sol" loading="lazy" data-lb="fal-web/02-plateia-teto-pordosol.jpg" data-cap="Plateia sob o voal"><img src="fal-web/02-plateia-teto-noite.jpg" data-hora="noite" alt="Plateia sob o voal · Noite" loading="lazy" data-lb="fal-web/02-plateia-teto-noite.jpg" data-cap="Plateia sob o voal"><figcaption>Plateia sob o voal</figcaption><span class="ilus">Imagem ilustrativa</span></figure>
+      <figure class="cena "><img src="fal-web/03-olhando-pra-cima-dia.jpg" data-hora="dia" alt="O teto · Dia" loading="lazy" data-lb="fal-web/03-olhando-pra-cima-dia.jpg" data-cap="O teto"><img src="fal-web/03-olhando-pra-cima-pordosol.jpg" data-hora="pordosol" alt="O teto · Pôr do sol" loading="lazy" data-lb="fal-web/03-olhando-pra-cima-pordosol.jpg" data-cap="O teto"><img src="fal-web/03-olhando-pra-cima-noite.jpg" data-hora="noite" alt="O teto · Noite" loading="lazy" data-lb="fal-web/03-olhando-pra-cima-noite.jpg" data-cap="O teto"><figcaption>O teto</figcaption><span class="ilus">Imagem ilustrativa</span></figure>
+      <div class="grid2">
+        <figure class="cena "><img src="fal-web/04-do-palco-dia.jpg" data-hora="dia" alt="Do palco · Dia" loading="lazy" data-lb="fal-web/04-do-palco-dia.jpg" data-cap="Do palco"><img src="fal-web/04-do-palco-pordosol.jpg" data-hora="pordosol" alt="Do palco · Pôr do sol" loading="lazy" data-lb="fal-web/04-do-palco-pordosol.jpg" data-cap="Do palco"><img src="fal-web/04-do-palco-noite.jpg" data-hora="noite" alt="Do palco · Noite" loading="lazy" data-lb="fal-web/04-do-palco-noite.jpg" data-cap="Do palco"><figcaption>Do palco</figcaption><span class="ilus">Imagem ilustrativa</span></figure>
+        <figure class="cena "><img src="fal-web/06-lateral-leste-dia.jpg" data-hora="dia" alt="Convívio · Dia" loading="lazy" data-lb="fal-web/06-lateral-leste-dia.jpg" data-cap="Convívio"><img src="fal-web/06-lateral-leste-pordosol.jpg" data-hora="pordosol" alt="Convívio · Pôr do sol" loading="lazy" data-lb="fal-web/06-lateral-leste-pordosol.jpg" data-cap="Convívio"><img src="fal-web/06-lateral-leste-noite.jpg" data-hora="noite" alt="Convívio · Noite" loading="lazy" data-lb="fal-web/06-lateral-leste-noite.jpg" data-cap="Convívio"><figcaption>Convívio</figcaption><span class="ilus">Imagem ilustrativa</span></figure>
+        <figure class="cena "><img src="fal-web/05-lateral-oeste-dia.jpg" data-hora="dia" alt="Lateral Algar · Dia" loading="lazy" data-lb="fal-web/05-lateral-oeste-dia.jpg" data-cap="Lateral Algar"><img src="fal-web/05-lateral-oeste-pordosol.jpg" data-hora="pordosol" alt="Lateral Algar · Pôr do sol" loading="lazy" data-lb="fal-web/05-lateral-oeste-pordosol.jpg" data-cap="Lateral Algar"><img src="fal-web/05-lateral-oeste-noite.jpg" data-hora="noite" alt="Lateral Algar · Noite" loading="lazy" data-lb="fal-web/05-lateral-oeste-noite.jpg" data-cap="Lateral Algar"><figcaption>Lateral Algar</figcaption><span class="ilus">Imagem ilustrativa</span></figure>
+        <figure class="cena "><img src="fal-web/07-lounges-mar-dia.jpg" data-hora="dia" alt="Lounges e o mar · Dia" loading="lazy" data-lb="fal-web/07-lounges-mar-dia.jpg" data-cap="Lounges e o mar"><img src="fal-web/07-lounges-mar-pordosol.jpg" data-hora="pordosol" alt="Lounges e o mar · Pôr do sol" loading="lazy" data-lb="fal-web/07-lounges-mar-pordosol.jpg" data-cap="Lounges e o mar"><img src="fal-web/07-lounges-mar-noite.jpg" data-hora="noite" alt="Lounges e o mar · Noite" loading="lazy" data-lb="fal-web/07-lounges-mar-noite.jpg" data-cap="Lounges e o mar"><figcaption>Lounges e o mar</figcaption><span class="ilus">Imagem ilustrativa</span></figure>
+      </div>
+      
+      <div class="grid2">
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<section id="layout">
+  <div class="wrap">
+    <div class="cap-h"><p class="eyebrow">Dimensões</p><h2>O espaço visto de cima</h2><p class="l">Para entender o tamanho de cada área e onde fica cada coisa.</p></div>
+    <div class="tps">
+      <div class="tp" data-tp><div class="tp-fig"><img src="cru/topo-salao.jpg" alt="Salão visto de cima" width="1920" height="1326" loading="lazy"><svg viewBox="0 0 1920 1326" preserveAspectRatio="none"><g class="pt" data-k="0" tabindex="0" aria-label="Plateia · 100 lugares · 10 × 7 m"><circle cx="926" cy="563" r="44" class="pt-halo"/><circle cx="926" cy="563" r="30" class="pt-dot"/><text x="926" y="563" dy=".36em" text-anchor="middle">1</text></g><g class="pt" data-k="1" tabindex="0" aria-label="Palco e LED · 6,2 × 2,2 m"><circle cx="622" cy="516" r="44" class="pt-halo"/><circle cx="622" cy="516" r="30" class="pt-dot"/><text x="622" y="516" dy=".36em" text-anchor="middle">2</text></g><g class="pt" data-k="2" tabindex="0" aria-label="Lounges · 20 × 6 m"><circle cx="998" cy="358" r="44" class="pt-halo"/><circle cx="998" cy="358" r="30" class="pt-dot"/><text x="998" y="358" dy=".36em" text-anchor="middle">3</text></g><g class="pt" data-k="3" tabindex="0" aria-label="Lateral oeste · totens e jardineiras"><circle cx="507" cy="606" r="44" class="pt-halo"/><circle cx="507" cy="606" r="30" class="pt-dot"/><text x="507" y="606" dy=".36em" text-anchor="middle">4</text></g><g class="pt" data-k="4" tabindex="0" aria-label="Lateral leste · convívio e bar"><circle cx="1283" cy="584" r="44" class="pt-halo"/><circle cx="1283" cy="584" r="30" class="pt-dot"/><text x="1283" y="584" dy=".36em" text-anchor="middle">5</text></g><g class="pt" data-k="5" tabindex="0" aria-label="Coffee · 50 lugares"><circle cx="960" cy="1004" r="44" class="pt-halo"/><circle cx="960" cy="1004" r="30" class="pt-dot"/><text x="960" y="1004" dy=".36em" text-anchor="middle">6</text></g><g class="pt" data-k="6" tabindex="0" aria-label="Ativação esportiva · 5,2 × 3,4 m"><circle cx="1340" cy="996" r="44" class="pt-halo"/><circle cx="1340" cy="996" r="30" class="pt-dot"/><text x="1340" y="996" dy=".36em" text-anchor="middle">7</text></g><g class="pt" data-k="7" tabindex="0" aria-label="Praia · frente do salão livre (20 m)"><circle cx="960" cy="122" r="44" class="pt-halo"/><circle cx="960" cy="122" r="30" class="pt-dot"/><text x="960" y="122" dy=".36em" text-anchor="middle">8</text></g></svg></div><div class="tp-leg"><p class="tp-t">Salão visto de cima</p><ul><li class="lg" data-k="0"><b>1</b><span>Plateia · 100 lugares · 10 × 7 m</span></li><li class="lg" data-k="1"><b>2</b><span>Palco e LED · 6,2 × 2,2 m</span></li><li class="lg" data-k="2"><b>3</b><span>Lounges · 20 × 6 m</span></li><li class="lg" data-k="3"><b>4</b><span>Lateral oeste · totens e jardineiras</span></li><li class="lg" data-k="4"><b>5</b><span>Lateral leste · convívio e bar</span></li><li class="lg" data-k="5"><b>6</b><span>Coffee · 50 lugares</span></li><li class="lg" data-k="6"><b>7</b><span>Ativação esportiva · 5,2 × 3,4 m</span></li><li class="lg" data-k="7"><b>8</b><span>Praia · frente do salão livre (20 m)</span></li></ul></div></div><div class="tp" data-tp><div class="tp-fig"><img src="cru/topo-luau.jpg" alt="Luau visto de cima" width="1920" height="1326" loading="lazy"><svg viewBox="0 0 1920 1326" preserveAspectRatio="none"><g class="pt" data-k="0" tabindex="0" aria-label="Quadra 3 · 16 × 8 m · fogueira e roda"><circle cx="956" cy="791" r="44" class="pt-halo"/><circle cx="956" cy="791" r="30" class="pt-dot"/><text x="956" y="791" dy=".36em" text-anchor="middle">1</text></g><g class="pt" data-k="1" tabindex="0" aria-label="Quadra 4 · 16 × 8 m · bar, DJ e lounges"><circle cx="957" cy="514" r="44" class="pt-halo"/><circle cx="957" cy="514" r="30" class="pt-dot"/><text x="957" y="514" dy=".36em" text-anchor="middle">2</text></g><g class="pt" data-k="2" tabindex="0" aria-label="Bar de palha"><circle cx="1178" cy="456" r="44" class="pt-halo"/><circle cx="1178" cy="456" r="30" class="pt-dot"/><text x="1178" y="456" dy=".36em" text-anchor="middle">3</text></g><g class="pt" data-k="3" tabindex="0" aria-label="DJ"><circle cx="796" cy="442" r="44" class="pt-halo"/><circle cx="796" cy="442" r="30" class="pt-dot"/><text x="796" y="442" dy=".36em" text-anchor="middle">4</text></g><g class="pt" data-k="4" tabindex="0" aria-label="Fogueira"><circle cx="956" cy="768" r="44" class="pt-halo"/><circle cx="956" cy="768" r="30" class="pt-dot"/><text x="956" y="768" dy=".36em" text-anchor="middle">5</text></g><g class="pt" data-k="5" tabindex="0" aria-label="Varais de luz · postes de 4 m"><circle cx="960" cy="542" r="44" class="pt-halo"/><circle cx="960" cy="542" r="30" class="pt-dot"/><text x="960" y="542" dy=".36em" text-anchor="middle">6</text></g><g class="pt" data-k="6" tabindex="0" aria-label="Guarda-sóis"><circle cx="1017" cy="228" r="44" class="pt-halo"/><circle cx="1017" cy="228" r="30" class="pt-dot"/><text x="1017" y="228" dy=".36em" text-anchor="middle">7</text></g></svg></div><div class="tp-leg"><p class="tp-t">Luau visto de cima</p><ul><li class="lg" data-k="0"><b>1</b><span>Quadra 3 · 16 × 8 m · fogueira e roda</span></li><li class="lg" data-k="1"><b>2</b><span>Quadra 4 · 16 × 8 m · bar, DJ e lounges</span></li><li class="lg" data-k="2"><b>3</b><span>Bar de palha</span></li><li class="lg" data-k="3"><b>4</b><span>DJ</span></li><li class="lg" data-k="4"><b>5</b><span>Fogueira</span></li><li class="lg" data-k="5"><b>6</b><span>Varais de luz · postes de 4 m</span></li><li class="lg" data-k="6"><b>7</b><span>Guarda-sóis</span></li></ul></div></div><div class="tp" data-tp><div class="tp-fig"><img src="cru/topo-praia.jpg" alt="Praia e lounges vistos de cima" width="1920" height="1326" loading="lazy"><svg viewBox="0 0 1920 1326" preserveAspectRatio="none"><g class="pt" data-k="0" tabindex="0" aria-label="Lounges · 20 × 6 m"><circle cx="1004" cy="833" r="44" class="pt-halo"/><circle cx="1004" cy="833" r="30" class="pt-dot"/><text x="1004" y="833" dy=".36em" text-anchor="middle">1</text></g><g class="pt" data-k="1" tabindex="0" aria-label="Praia · frente do salão livre (20 m)"><circle cx="960" cy="541" r="44" class="pt-halo"/><circle cx="960" cy="541" r="30" class="pt-dot"/><text x="960" y="541" dy=".36em" text-anchor="middle">2</text></g><g class="pt" data-k="2" tabindex="0" aria-label="Guarda-sóis dos vizinhos"><circle cx="52" cy="432" r="44" class="pt-halo"/><circle cx="52" cy="432" r="30" class="pt-dot"/><text x="52" y="432" dy=".36em" text-anchor="middle">3</text></g><g class="pt" data-k="3" tabindex="0" aria-label="Mar"><circle cx="960" cy="48" r="44" class="pt-halo"/><circle cx="960" cy="48" r="30" class="pt-dot"/><text x="960" y="48" dy=".36em" text-anchor="middle">4</text></g></svg></div><div class="tp-leg"><p class="tp-t">Praia e lounges vistos de cima</p><ul><li class="lg" data-k="0"><b>1</b><span>Lounges · 20 × 6 m</span></li><li class="lg" data-k="1"><b>2</b><span>Praia · frente do salão livre (20 m)</span></li><li class="lg" data-k="2"><b>3</b><span>Guarda-sóis dos vizinhos</span></li><li class="lg" data-k="3"><b>4</b><span>Mar</span></li></ul></div></div><div class="tp" data-tp><div class="tp-fig"><img src="cru/topo-geral.jpg" alt="Implantação geral" width="1920" height="1326" loading="lazy"><svg viewBox="0 0 1920 1326" preserveAspectRatio="none"><g class="pt" data-k="0" tabindex="0" aria-label="Salão coberto · 20 × 40 m"><circle cx="758" cy="831" r="44" class="pt-halo"/><circle cx="758" cy="831" r="30" class="pt-dot"/><text x="758" y="831" dy=".36em" text-anchor="middle">1</text></g><g class="pt" data-k="1" tabindex="0" aria-label="Quadra 3 · 16 × 8 m · fogueira e roda"><circle cx="1300" cy="719" r="44" class="pt-halo"/><circle cx="1300" cy="719" r="30" class="pt-dot"/><text x="1300" y="719" dy=".36em" text-anchor="middle">2</text></g><g class="pt" data-k="2" tabindex="0" aria-label="Quadra 4 · 16 × 8 m · bar, DJ e lounges"><circle cx="1272" cy="589" r="44" class="pt-halo"/><circle cx="1272" cy="589" r="30" class="pt-dot"/><text x="1272" y="589" dy=".36em" text-anchor="middle">3</text></g><g class="pt" data-k="3" tabindex="0" aria-label="Quadras 1 e 2 · seguem em jogo"><circle cx="1354" cy="962" r="44" class="pt-halo"/><circle cx="1354" cy="962" r="30" class="pt-dot"/><text x="1354" y="962" dy=".36em" text-anchor="middle">4</text></g><g class="pt" data-k="4" tabindex="0" aria-label="Praia · frente do salão livre (20 m)"><circle cx="808" cy="475" r="44" class="pt-halo"/><circle cx="808" cy="475" r="30" class="pt-dot"/><text x="808" y="475" dy=".36em" text-anchor="middle">5</text></g><g class="pt" data-k="5" tabindex="0" aria-label="Pórtico Algar"><circle cx="973" cy="911" r="44" class="pt-halo"/><circle cx="973" cy="911" r="30" class="pt-dot"/><text x="973" y="911" dy=".36em" text-anchor="middle">6</text></g><g class="pt" data-k="6" tabindex="0" aria-label="Mar"><circle cx="830" cy="276" r="44" class="pt-halo"/><circle cx="830" cy="276" r="30" class="pt-dot"/><text x="830" y="276" dy=".36em" text-anchor="middle">7</text></g></svg></div><div class="tp-leg"><p class="tp-t">Implantação geral</p><ul><li class="lg" data-k="0"><b>1</b><span>Salão coberto · 20 × 40 m</span></li><li class="lg" data-k="1"><b>2</b><span>Quadra 3 · 16 × 8 m · fogueira e roda</span></li><li class="lg" data-k="2"><b>3</b><span>Quadra 4 · 16 × 8 m · bar, DJ e lounges</span></li><li class="lg" data-k="3"><b>4</b><span>Quadras 1 e 2 · seguem em jogo</span></li><li class="lg" data-k="4"><b>5</b><span>Praia · frente do salão livre (20 m)</span></li><li class="lg" data-k="5"><b>6</b><span>Pórtico Algar</span></li><li class="lg" data-k="6"><b>7</b><span>Mar</span></li></ul></div></div>
+      <div class="tp"><div class="tp-fig"><img src="cru/13-planta.jpg" alt="Planta geral" width="1920" height="1326" loading="lazy"><svg viewBox="0 0 1920 1326" preserveAspectRatio="none"><g class="pt pt-link" data-lb="fal-web/02-plateia-teto-pordosol.jpg" data-cap="Salão" tabindex="0" role="button" aria-label="Salão"><circle cx="695" cy="575" r="44" class="pt-halo"/><circle cx="695" cy="575" r="30" class="pt-dot"/><text x="695" y="575" dy=".36em" text-anchor="middle">1</text></g><g class="pt pt-link" data-lb="fal-web/04-do-palco-pordosol.jpg" data-cap="Palco" tabindex="0" role="button" aria-label="Palco"><circle cx="527" cy="535" r="44" class="pt-halo"/><circle cx="527" cy="535" r="30" class="pt-dot"/><text x="527" y="535" dy=".36em" text-anchor="middle">2</text></g><g class="pt" tabindex="0" aria-label="Luau"><circle cx="1336" cy="553" r="44" class="pt-halo"/><circle cx="1336" cy="553" r="30" class="pt-dot"/><text x="1336" y="553" dy=".36em" text-anchor="middle">3</text></g><g class="pt" tabindex="0" aria-label="Fogueira"><circle cx="1334" cy="672" r="44" class="pt-halo"/><circle cx="1334" cy="672" r="30" class="pt-dot"/><text x="1334" y="672" dy=".36em" text-anchor="middle">4</text></g><g class="pt" tabindex="0" aria-label="Bar de palha"><circle cx="1473" cy="451" r="44" class="pt-halo"/><circle cx="1473" cy="451" r="30" class="pt-dot"/><text x="1473" y="451" dy=".36em" text-anchor="middle">5</text></g><g class="pt" tabindex="0" aria-label="DJ"><circle cx="1227" cy="411" r="44" class="pt-halo"/><circle cx="1227" cy="411" r="30" class="pt-dot"/><text x="1227" y="411" dy=".36em" text-anchor="middle">6</text></g><g class="pt pt-link" data-lb="fal-web/07-lounges-mar-pordosol.jpg" data-cap="Praia" tabindex="0" role="button" aria-label="Praia"><circle cx="275" cy="88" r="44" class="pt-halo"/><circle cx="275" cy="88" r="30" class="pt-dot"/><text x="275" y="88" dy=".36em" text-anchor="middle">7</text></g><g class="pt pt-link" data-lb="fal-web/14-portico-pordosol.jpg" data-cap="Chegada" tabindex="0" role="button" aria-label="Chegada"><circle cx="929" cy="1017" r="44" class="pt-halo"/><circle cx="929" cy="1017" r="30" class="pt-dot"/><text x="929" y="1017" dy=".36em" text-anchor="middle">8</text></g><g class="pt pt-link" data-lb="fal-web/05-lateral-oeste-pordosol.jpg" data-cap="Ativação Algar" tabindex="0" role="button" aria-label="Ativação Algar"><circle cx="872" cy="771" r="44" class="pt-halo"/><circle cx="872" cy="771" r="30" class="pt-dot"/><text x="872" y="771" dy=".36em" text-anchor="middle">9</text></g><g class="pt" tabindex="0" aria-label="Quadras"><circle cx="1334" cy="1017" r="44" class="pt-halo"/><circle cx="1334" cy="1017" r="30" class="pt-dot"/><text x="1334" y="1017" dy=".36em" text-anchor="middle">10</text></g></svg></div><div class="tp-leg"><p class="tp-t">Planta geral · toque em um número para ver a foto</p><ul><li><b>1</b><span>Salão</span></li><li><b>2</b><span>Palco</span></li><li><b>3</b><span>Luau</span></li><li><b>4</b><span>Fogueira</span></li><li><b>5</b><span>Bar de palha</span></li><li><b>6</b><span>DJ</span></li><li><b>7</b><span>Praia</span></li><li><b>8</b><span>Chegada</span></li><li><b>9</b><span>Ativação Algar</span></li><li><b>10</b><span>Quadras</span></li></ul></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="editor">
+  <div class="wrap">
+    <div class="cap-h"><p class="eyebrow">Interativo</p><h2>Monte o seu layout</h2><p class="l">A planta real do Mediterrâneo, área por área: arraste as mesas e os itens da ambientação (palco, plateia, lounges, luau), veja em 3D e passeie em 360°. Quando ficar do seu jeito, salve o layout e a Indaiá recebe.</p></div>
+    <p class="ed-link"><a href="https://proposta-mediterraneo.vercel.app/layout/?espaco=mediterraneo&modo=layout" target="_blank" rel="noopener">Abrir o editor de layout ↗</a></p>
+    <p class="ed-abrir"><a href="https://proposta-mediterraneo.vercel.app/layout/?espaco=mediterraneo&modo=layout" target="_blank" rel="noopener">Abrir o editor em tela cheia ↗</a><span class="aviso">Planta em escala · o layout final é definido com a equipe Indaiá</span></p>
+  </div>
+</section>
+
+<section id="investimento">
+  <div class="wrap">
+    <div class="cap-h"><p class="eyebrow">Investimento</p><h2>O que entra no seu evento</h2><p class="l">Mobiliário, ambientação e a identidade Algar no espaço — item por item, com a quantidade de cada um.</p></div>
+    <div class="inv">
+      <div><div class="inv-bl"><h3>Mobiliário</h3><p class="sub">O que o convidado senta, apoia e usa — do acervo da Indaiá, montado no dia.</p><div class="qts"><div class="qt"><div class="n"><b>Mesas do coffee com toalha</b><span>10 lugares</span></div><b class="qtd">5 <small>unidades</small></b></div><div class="qt"><div class="n"><b>Mesa de coffee e bebidas</b><span>buffet</span></div><b class="qtd">1 <small>unidade</small></b></div><div class="qt"><div class="n"><b>Mesas altas com pufes</b><span>apoio em pé</span></div><b class="qtd">4 <small>conjuntos</small></b></div><div class="qt"><div class="n"><b>Lounges do salão</b><span>sofás, poltronas e mesa de centro</span></div><b class="qtd">3 <small>conjuntos</small></b></div><div class="qt"><div class="n"><b>Lounges de areia com lanternas</b><span>pé na areia, virados para o mar</span></div><b class="qtd">5 <small>conjuntos</small></b></div><div class="qt"><div class="n"><b>Roda de pufes e almofadas</b><span>~20 lugares ao redor da fogueira</span></div><b class="qtd">1 <small>conjunto</small></b></div><div class="qt"><div class="n"><b>Tapetes de palha</b><span>caminho e estar na areia</span></div><b class="qtd">4 <small>unidades</small></b></div><div class="qt"><div class="n"><b>Bar de apoio do salão</b><span>drinks e café</span></div><b class="qtd">1 <small>unidade</small></b></div><div class="qt"><div class="n"><b>Bar de praia com cobertura de palha</b><span>balcão do luau</span></div><b class="qtd">1 <small>unidade</small></b></div></div></div><div class="inv-bl"><h3>Ambientação</h3><p class="sub">A luz e o clima do luau, do fim de tarde até a última música.</p><div class="qts"><div class="qt"><div class="n"><b>Bandeirolas verde e branco</b><span>salão e luau</span></div><b class="qtd">100 <small>metros</small></b></div><div class="qt"><div class="n"><b>Varais de luz com postes de bambu</b><span>~60 m, 8 postes</span></div><b class="qtd">1 <small>conjunto</small></b></div><div class="qt"><div class="n"><b>Tochas tiki com combustível</b><span>caminho da areia</span></div><b class="qtd">20 <small>unidades</small></b></div><div class="qt"><div class="n"><b>Fogueira central</b><span>estrutura, lenha e brigadista</span></div><b class="qtd">1 <small>evento</small></b></div></div></div><div class="inv-bl"><h3>Identidade Algar</h3><p class="sub">A marca nova da Algar no espaço, na entrada do encontro.</p><div class="qts"><div class="qt"><div class="n"><b>Pórtico de entrada verde Algar</b><span>4 × 3 m, com grafismo aplicado</span></div><b class="qtd">1 <small>unidade</small></b></div></div></div></div>
+      <aside class="inv-res">
+        <div class="tot"><span>Total do evento · 100 convidados</span><b>R$ 100.000</b><span>14 itens</span></div>
+        <p class="inv-nota">Proposta válida até 18/10/2026. <b>Fora deste valor:</b> gastronomia, bar, equipe de serviço, locação do espaço e taxas — na proposta comercial à parte.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="passeio"><div class="wrap"><div class="cap-h"><p class="eyebrow">Filme</p><h2>Um minuto no Mediterrâneo</h2></div><div class="player"><video controls playsinline preload="metadata" poster="video/poster.jpg"><source src="video/passeio.mp4" type="video/mp4"></video></div></div></section>
+
+<footer><div class="wrap"><img src="assets/logo-indaia.webp" alt="Indaiá Eventos"><p><strong>Mediterrâneo Indaiá</strong> · Praia da Joaquina, Florianópolis. Proposta de ambientação, mobiliário e identidade para a Algar. Valores de 18/09/2026.</p><p>Imagens ilustrativas geradas a partir do projeto 3D do espaço.</p></div></footer>
+
+<div class="lb" id="lb" aria-modal="true" role="dialog"><button type="button" class="lb-prev" aria-label="Anterior">‹</button><img src="" alt=""><button type="button" class="lb-next" aria-label="Próxima">›</button><button type="button" class="lb-x" aria-label="Fechar">✕</button><p class="lb-cap"></p></div>
+<div id="irp"><ul></ul><button type="button">Ir para</button></div>
+
+<script>
+(function(){
+  document.body.dataset.hora='pordosol';
+  var hb=document.querySelectorAll('.hora button');
+  hb.forEach(function(b){b.addEventListener('click',function(){document.body.dataset.hora=b.dataset.h;document.querySelectorAll('.cena img[data-hora="'+b.dataset.h+'"]').forEach(function(i){i.loading='eager';});hb.forEach(function(x){x.classList.toggle('on',x===b)});});});
+  document.addEventListener('keydown',function(e){if(e.key==='1')hb[0].click();if(e.key==='2')hb[1].click();if(e.key==='3')hb[2].click();});
+  document.querySelectorAll('[data-tr]').forEach(function(t){var tr=t.querySelector('.tr-track');function st(){var it=tr.querySelector('.tr-item');return it?it.getBoundingClientRect().width+14:400;}t.querySelector('.tr-prev').addEventListener('click',function(){tr.scrollBy({left:-st(),behavior:'smooth'})});t.querySelector('.tr-next').addEventListener('click',function(){tr.scrollBy({left:st(),behavior:'smooth'})});});
+  document.querySelectorAll('[data-tp]').forEach(function(t){var ms=t.querySelectorAll('.pt'),ls=t.querySelectorAll('.lg');function set(k,on){ms.forEach(function(m){if(m.dataset.k===k)m.classList.toggle('on',on)});ls.forEach(function(l){if(l.dataset.k===k)l.classList.toggle('on',on)});}function bind(el){var k=el.dataset.k;el.addEventListener('mouseenter',function(){set(k,true)});el.addEventListener('mouseleave',function(){set(k,false)});el.addEventListener('focus',function(){set(k,true)});el.addEventListener('blur',function(){set(k,false)});}ms.forEach(bind);ls.forEach(bind);});
+  var lb=document.getElementById('lb'),lbImg=lb.querySelector('img'),lbCap=lb.querySelector('.lb-cap');
+  function visiveis(){return Array.prototype.filter.call(document.querySelectorAll('[data-lb]'),function(el){if(el.closest('.cena')){return getComputedStyle(el).opacity!=='0';}return true;});}
+  var lista=[],idx=0;
+  function abrir(el){lista=visiveis();idx=Math.max(0,lista.indexOf(el));mostrar();}
+  function mostrar(){var el=lista[idx];lbImg.src=el.dataset.lb;lbCap.textContent=el.dataset.cap||el.getAttribute('alt')||'';lb.classList.add('on');document.body.style.overflow='hidden';}
+  function fechar(){lb.classList.remove('on');document.body.style.overflow='';}
+  document.querySelectorAll('[data-lb]').forEach(function(el){el.addEventListener('click',function(){abrir(el)});el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();abrir(el);}});});
+  lb.querySelector('.lb-x').addEventListener('click',fechar);lb.querySelector('.lb-prev').addEventListener('click',function(){idx=(idx-1+lista.length)%lista.length;mostrar();});lb.querySelector('.lb-next').addEventListener('click',function(){idx=(idx+1)%lista.length;mostrar();});
+  lb.addEventListener('click',function(e){if(e.target===lb)fechar();});
+  document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')fechar();if(e.key==='ArrowLeft'){idx=(idx-1+lista.length)%lista.length;mostrar();}if(e.key==='ArrowRight'){idx=(idx+1)%lista.length;mostrar();}});
+  var irp=document.getElementById('irp'),ul=irp.querySelector('ul'),bt=irp.querySelector('button');
+  var R={abertura:'Início',joaquina:'Praia da Joaquina',encontro:'O encontro',layout:'Visto de cima',editor:'Monte o seu layout',investimento:'Investimento',passeio:'Filme'};
+  document.querySelectorAll('section[id],header[id]').forEach(function(s){var a=document.createElement('a');a.href='#'+s.id;a.textContent=R[s.id]||s.id;var li=document.createElement('li');li.appendChild(a);ul.appendChild(li);a.addEventListener('click',function(){irp.classList.remove('aberto')});});
+  var top=document.createElement('li');top.innerHTML='<a href="#abertura">↑ Voltar ao topo</a>';ul.appendChild(top);
+  bt.addEventListener('click',function(){irp.classList.toggle('aberto')});
+  window.addEventListener('scroll',function(){irp.classList.toggle('vis',window.scrollY>window.innerHeight*.8)},{passive:true});
+})();
+
+</script>
+
+</body>
+</html>

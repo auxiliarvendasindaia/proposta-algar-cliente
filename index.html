@@ -196,19 +196,85 @@ footer img{height:34px;width:auto}
 #irp.aberto ul{display:flex}
 #irp ul a{display:block;padding:9px 12px;border-radius:8px;color:var(--ink);text-decoration:none;font-size:.95rem}
 #irp ul a:hover{background:var(--bg3)}
-.qt{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:16px}
-.qt .n{min-width:0}
-.qt .qtd{font-weight:600;font-size:1.25rem;white-space:nowrap}
-.qt .qtd small{font-size:.76rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)}
-.inv-res .tot span:last-child{color:var(--ambar)}
+.orc{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:26px;align-items:start}
+@media (max-width:1000px){.orc{grid-template-columns:1fr}}
+.print-cabeca{display:none}
+.ficha{margin-bottom:26px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.ficha-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px 22px}
+.ficha-g div{display:grid;gap:3px}
+.ficha-g span{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
+.ficha-g b{font-weight:600;font-size:1.02rem}
+.grp{margin-bottom:26px}
+.grp h3{margin:0 0 12px;font-family:Fraunces,serif;font-weight:500;font-size:1.4rem}
+.grp-itens{display:grid;gap:8px}
+.ln-it{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:14px;padding:12px 16px;border:1px solid var(--line);border-radius:12px;background:var(--bg2)}
+.ln-n{display:grid;gap:3px;min-width:0}
+.ln-n b{font-weight:600}
+.ln-n span{color:var(--ink3);font-size:.86rem}
+.ln-tot{font-weight:600;white-space:nowrap}
+.ln-it.ed{grid-template-columns:minmax(0,1fr) auto auto;row-gap:10px}
+.ln-it.ed input{font:inherit;color:var(--ink);background:var(--bg3);border:1px solid var(--line);border-radius:8px;padding:6px 9px}
+.ln-it.ed input:focus{outline:none;border-color:var(--ambar)}
+.ln-it.ed .in-nome{grid-column:1/-1;width:100%;font-weight:600}
+.ln-nums{display:flex;flex-wrap:wrap;gap:10px}
+.ln-nums label{display:grid;gap:3px}
+.ln-nums span{font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
+.in-qtd{width:76px;text-align:center}
+.in-preco{width:118px}
+.in-un{width:118px}
+.grp-sub{display:flex;justify-content:space-between;gap:12px;padding:10px 16px 0;color:var(--ink2);font-size:.9rem}
+.grp-sub b{color:var(--ink)}
+.qt-x{border:1px solid var(--line);background:transparent;color:var(--ink3);border-radius:999px;padding:7px 13px;cursor:pointer;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;justify-self:end}
+.qt-x:hover{color:#FF9A9A;border-color:#FF9A9A}
+.add{width:100%;border:1px dashed var(--line);background:transparent;color:var(--ink2);border-radius:12px;padding:13px;cursor:pointer;font:inherit}
+.add:hover{border-color:var(--ambar);color:var(--ambar)}
+.res-l{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:.94rem;color:var(--ink2);padding:4px 0}
+.res-l b{color:var(--ink);white-space:nowrap}
+.res-desc{flex-wrap:wrap}
+.desc-campo{display:flex;gap:6px}
+.desc-campo select,.desc-campo input{font:inherit;font-size:.9rem;color:var(--ink);background:var(--bg3);border:1px solid var(--line);border-radius:8px;padding:5px 8px}
+.desc-campo select{width:62px}
+.desc-campo input{width:96px;text-align:right}
+.ed-bt{border:1px solid var(--line);background:var(--bg3);color:var(--ink);padding:10px 16px;border-radius:999px;cursor:pointer;font:600 .9rem Figtree,sans-serif}
+.ed-bt.on{background:var(--ambar);color:#1A1207;border-color:var(--ambar)}
+.inv-msg{font-size:.86rem;color:var(--ink2);line-height:1.45}
+.inv-msg input{width:100%;margin-top:8px;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg3);color:var(--ink);font-size:.8rem}
+
+@media print{
+  @page{margin:14mm 12mm}
+  html,body{background:#fff!important;overflow:visible!important}
+  body>*{display:none!important}
+  body>#investimento{display:block!important}
+  #investimento{padding:0!important;color:#111}
+  #investimento *{color:#111!important;border-color:#d9d4cb!important;background:transparent!important;text-shadow:none!important}
+  .wrap{width:auto!important;margin:0!important}
+  .no-print,.inv-acoes,.inv-msg,.qt-x,.add,.desc-campo{display:none!important}
+  .print-cabeca{display:flex!important;align-items:center;gap:14px;padding-bottom:10mm;margin-bottom:8mm;border-bottom:1px solid #d9d4cb}
+  .print-cabeca img{height:34px;width:auto;filter:invert(1)}
+  .print-cabeca div{display:grid;gap:2px}
+  .print-cabeca b{font:600 1.1rem Figtree,sans-serif}
+  .print-cabeca span{font-size:.82rem;color:#555!important}
+  .orc{display:block!important}
+  .ficha{margin-bottom:8mm;padding-bottom:6mm}
+  .ficha-g span{color:#666!important}
+  .grp{break-inside:avoid;margin-bottom:7mm}
+  .grp h3{font-size:1.15rem;margin-bottom:4mm}
+  .ln-it{break-inside:avoid;padding:5px 0!important;border:0!important;border-bottom:1px solid #ece8e0!important;border-radius:0!important}
+  .ln-n span{color:#666!important;font-size:.82rem}
+  .grp-sub{padding:5px 0 0;font-weight:600}
+  .inv-res{position:static!important;padding:0!important;border:0!important;margin-top:8mm;break-inside:avoid;display:block}
+  .inv-res .res-l{padding:4px 0;border-bottom:1px solid #ece8e0}
+  .inv-res .tot{border-top:2px solid #111!important;margin-top:4mm;padding-top:4mm;display:block}
+  .inv-res .tot b{font:500 2rem Fraunces,serif;display:block}
+  .inv-res .tot span{font-size:.9rem;color:#555!important}
+  .inv-nota{margin-top:6mm;font-size:.84rem;color:#555!important}
+}
 .inv-nota b{color:var(--ink)}
+.inv-acoes{display:flex;flex-wrap:wrap;gap:8px}
+.inv-acoes[hidden]{display:none}
 .ed-link{margin:0;text-align:center}
 .ed-link a{display:inline-block;padding:14px 24px;border-radius:999px;background:var(--bg2);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:600}
 .ed-link a:hover{border-color:var(--ambar);color:var(--ambar)}
-@media (max-width:680px){
-.qt{grid-template-columns:minmax(0,1fr);row-gap:12px;align-items:start}
-.qt .qtd{justify-self:start}
-}
 </style>
 
 </head>
@@ -292,16 +358,42 @@ footer img{height:34px;width:auto}
 
 <section id="investimento">
   <div class="wrap">
-    <div class="cap-h"><p class="eyebrow">Investimento</p><h2>O que entra no seu evento</h2><p class="l">Mobiliário, ambientação e a identidade Algar no espaço — item por item, com a quantidade de cada um.</p></div>
-    <div class="inv">
-      <div><div class="inv-bl"><h3>Mobiliário</h3><p class="sub">O que o convidado senta, apoia e usa — do acervo da Indaiá, montado no dia.</p><div class="qts"><div class="qt"><div class="n"><b>Mesas do coffee com toalha</b><span>10 lugares</span></div><b class="qtd">5 <small>unidades</small></b></div><div class="qt"><div class="n"><b>Mesa de coffee e bebidas</b><span>buffet</span></div><b class="qtd">1 <small>unidade</small></b></div><div class="qt"><div class="n"><b>Mesas altas com pufes</b><span>apoio em pé</span></div><b class="qtd">4 <small>conjuntos</small></b></div><div class="qt"><div class="n"><b>Lounges do salão</b><span>sofás, poltronas e mesa de centro</span></div><b class="qtd">3 <small>conjuntos</small></b></div><div class="qt"><div class="n"><b>Lounges de areia com lanternas</b><span>pé na areia, virados para o mar</span></div><b class="qtd">5 <small>conjuntos</small></b></div><div class="qt"><div class="n"><b>Roda de pufes e almofadas</b><span>~20 lugares ao redor da fogueira</span></div><b class="qtd">1 <small>conjunto</small></b></div><div class="qt"><div class="n"><b>Tapetes de palha</b><span>caminho e estar na areia</span></div><b class="qtd">4 <small>unidades</small></b></div><div class="qt"><div class="n"><b>Bar de apoio do salão</b><span>drinks e café</span></div><b class="qtd">1 <small>unidade</small></b></div><div class="qt"><div class="n"><b>Bar de praia com cobertura de palha</b><span>balcão do luau</span></div><b class="qtd">1 <small>unidade</small></b></div></div></div><div class="inv-bl"><h3>Ambientação</h3><p class="sub">A luz e o clima do luau, do fim de tarde até a última música.</p><div class="qts"><div class="qt"><div class="n"><b>Bandeirolas verde e branco</b><span>salão e luau</span></div><b class="qtd">100 <small>metros</small></b></div><div class="qt"><div class="n"><b>Varais de luz com postes de bambu</b><span>~60 m, 8 postes</span></div><b class="qtd">1 <small>conjunto</small></b></div><div class="qt"><div class="n"><b>Tochas tiki com combustível</b><span>caminho da areia</span></div><b class="qtd">20 <small>unidades</small></b></div><div class="qt"><div class="n"><b>Fogueira central</b><span>estrutura, lenha e brigadista</span></div><b class="qtd">1 <small>evento</small></b></div></div></div><div class="inv-bl"><h3>Identidade Algar</h3><p class="sub">A marca nova da Algar no espaço, na entrada do encontro.</p><div class="qts"><div class="qt"><div class="n"><b>Pórtico de entrada verde Algar</b><span>4 × 3 m, com grafismo aplicado</span></div><b class="qtd">1 <small>unidade</small></b></div></div></div></div>
+    <div class="cap-h no-print"><p class="eyebrow">Investimento</p><h2>O seu orçamento</h2><p class="l">Tudo o que entra no evento, item por item. Ajuste o que precisar e gere o PDF para enviar.</p></div>
+
+    <div class="print-cabeca"><img src="assets/logo-indaia.webp" alt="Indaiá Eventos"><div><b>Proposta comercial</b><span>Mediterrâneo Indaiá · Praia da Joaquina · Florianópolis</span></div></div>
+
+    <div class="orc" data-orc>
+      <div>
+        <div class="ficha" data-ficha></div>
+        <div data-grupos></div>
+      </div>
+
       <aside class="inv-res">
-        <div class="tot"><span>Total do evento · 100 convidados</span><b>R$ 100.000</b><span>14 itens</span></div>
-        <p class="inv-nota">Proposta válida até 25/09/2026. <b>Fora deste valor:</b> gastronomia, bar, equipe de serviço, locação do espaço e taxas — na proposta comercial à parte.</p>
+        <div class="res-l"><span>Soma dos itens</span><b data-soma>R$ 0</b></div>
+        <div class="res-l res-desc"><span>Desconto</span>
+          <span class="desc-campo">
+            <select data-desc-tipo aria-label="Tipo de desconto"><option value="R$">R$</option><option value="%">%</option></select>
+            <input type="text" inputmode="decimal" data-desc-valor value="0" aria-label="Valor do desconto">
+          </span>
+          <b data-desc-calc>− R$ 0</b>
+        </div>
+        <div class="tot"><span>Total do evento</span><b data-total>R$ 0</b><span data-pp></span></div>
+        <div class="inv-acoes">
+          <button type="button" class="p" data-pdf>Gerar PDF para o cliente</button>
+          <button type="button" class="ed-bt" data-editar aria-pressed="false">Editar</button>
+        </div>
+        <div class="inv-acoes inv-extra" hidden>
+          <button type="button" data-link>Copiar link com estas alterações</button>
+          <button type="button" data-copiar>Copiar resumo</button>
+          <button type="button" data-zerar>Voltar ao orçamento do CRM</button>
+        </div>
+        <p class="inv-nota">Proposta válida até <span data-validade>25/09/2026</span>. Valores sujeitos a confirmação da Indaiá Eventos.</p>
+        <div class="inv-msg" data-inv-msg></div>
       </aside>
     </div>
   </div>
 </section>
+<script id="orc-dados" type="application/json">{"orcamento":{"numero":"ORC-2026-01900","cliente":"Denize Dantas - Algar","telefone":"+5534992560009","evento":"Corporativo","espaco":"Mediterrâneo 242","cidade":"Florianópolis","data_evento":"2026-10-22","convidados":100,"setor":"corporativo","validade":"2026-09-25","origem":"CRM ORC-2026-01900 · exportado em 2026-09-23"},"grupos":[{"id":"alimentacao","titulo":"Alimentação"},{"id":"bebidas","titulo":"Bebidas"},{"id":"itens_extras","titulo":"Itens extras"},{"id":"servicos","titulo":"Serviços"}],"itens":[{"id":"i0","grupo":"alimentacao","nome":"Coffee Standard (Item)","un":"unidade","qtd":100,"preco":4990},{"id":"i1","grupo":"alimentacao","nome":"Coquetel Pacote 2 ","un":"unidade","qtd":100,"preco":15900},{"id":"i2","grupo":"bebidas","nome":"Open bar 2","un":"unidade","qtd":100,"preco":8590},{"id":"i3","grupo":"itens_extras","nome":"Assessoria e Cerimonial - Dia · Assistente adicional - Assessoria e Cerimonial","un":"unidade","qtd":1,"preco":75000},{"id":"i4","grupo":"itens_extras","nome":"Assessoria e Cerimonial - Dia","un":"unidade","qtd":1,"preco":490000},{"id":"i5","grupo":"itens_extras","nome":"Audiovisual - Transmissão","un":"unidade","qtd":1,"preco":1000000},{"id":"i6","grupo":"itens_extras","nome":"Cadeira de Madeira","un":"unidade","qtd":100,"preco":1500},{"id":"i7","grupo":"itens_extras","nome":"Cordão de Luzes","un":"unidade","qtd":1,"preco":80000},{"id":"i8","grupo":"itens_extras","nome":"Luz Cênica","un":"unidade","qtd":20,"preco":8000},{"id":"i9","grupo":"itens_extras","nome":"Mesa Bistrô c/ 2 Banqueta","un":"unidade","qtd":20,"preco":35000},{"id":"i10","grupo":"itens_extras","nome":"Pacote audiovisual - DJ (Telão de LED não incluso)","un":"unidade","qtd":1,"preco":1000000},{"id":"i11","grupo":"itens_extras","nome":"Pacote audiovisual - LED (DJ não incluso)","un":"unidade","qtd":1,"preco":1000000},{"id":"i12","grupo":"itens_extras","nome":"Palco","un":"unidade","qtd":2,"preco":200000},{"id":"i13","grupo":"itens_extras","nome":"Recepcionista","un":"unidade","qtd":4,"preco":50000},{"id":"i14","grupo":"itens_extras","nome":"Tira de Led para laterais (1x3)","un":"unidade","qtd":2,"preco":150000},{"id":"s0","grupo":"servicos","nome":"Locação","un":"evento","qtd":1,"preco":2000000},{"id":"s1","grupo":"servicos","nome":"Equipe","un":"evento","qtd":1,"preco":442200},{"id":"s2","grupo":"servicos","nome":"Gerador de Energia","un":"evento","qtd":1,"preco":250000},{"id":"s3","grupo":"servicos","nome":"Taxa de Ecad","un":"evento","qtd":1,"preco":75000},{"id":"s4","grupo":"servicos","nome":"Taxa de Limpeza","un":"evento","qtd":1,"preco":50000},{"id":"s5","grupo":"servicos","nome":"Taxa de Segurança","un":"evento","qtd":1,"preco":50000}],"desconto":{"tipo":"R$","valor":425000}}</script>
 
 <section id="passeio"><div class="wrap"><div class="cap-h"><p class="eyebrow">Filme</p><h2>Um minuto no Mediterrâneo</h2></div><div class="player"><video controls playsinline preload="metadata" poster="video/poster.jpg"><source src="video/passeio.mp4" type="video/mp4"></video></div></div></section>
 
@@ -334,6 +426,197 @@ footer img{height:34px;width:auto}
   var top=document.createElement('li');top.innerHTML='<a href="#abertura">↑ Voltar ao topo</a>';ul.appendChild(top);
   bt.addEventListener('click',function(){irp.classList.toggle('aberto')});
   window.addEventListener('scroll',function(){irp.classList.toggle('vis',window.scrollY>window.innerHeight*.8)},{passive:true});
+})();
+(function(){
+  var raiz=document.querySelector('[data-orc]'); if(!raiz) return;
+  var D=JSON.parse(document.getElementById('orc-dados').textContent);
+  var q=function(s){return raiz.querySelector(s)};
+  var fmt=function(c){return 'R$ '+(c/100).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})};
+  var fmt0=function(c){return 'R$ '+Math.round(c/100).toLocaleString('pt-BR')};
+  var esc=function(t){return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')};
+  var clone=function(o){return JSON.parse(JSON.stringify(o))};
+  var acha=function(l,id){for(var i=0;i<l.length;i++)if(l[i].id===id)return l[i];return null};
+  var numBR=function(t){var n=parseFloat(String(t).replace(/\./g,'').replace(',','.'));return isNaN(n)?0:n};
+
+  // ---- estado ----
+  var E={itens:clone(D.itens),desconto:clone(D.desconto)};
+  var editando=false;
+
+  function b64(s){var u=new TextEncoder().encode(s),b='';u.forEach(function(c){b+=String.fromCharCode(c)});
+    return btoa(b).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');}
+  function deb64(s){var b=atob(s.replace(/-/g,'+').replace(/_/g,'/'));var u=new Uint8Array(b.length);
+    for(var i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return new TextDecoder().decode(u);}
+
+  var hp=location.hash.match(/(^|[#&])p=([^&]+)/);
+  if(hp){try{var o=JSON.parse(deb64(hp[2]));if(o&&o.itens)E=o;}catch(e){}}
+  else{try{var g=localStorage.getItem('algar-orcamento');
+    if(g){var x=JSON.parse(g);if(x&&x.itens&&x.itens.length)E=x;}}catch(e){}}
+  function guardar(){try{localStorage.setItem('algar-orcamento',JSON.stringify(E))}catch(e){}}
+
+  // ---- conta ----
+  function calc(){
+    var gs=D.grupos.map(function(g){
+      var l=E.itens.filter(function(i){return i.grupo===g.id});
+      return {id:g.id,titulo:g.titulo,linhas:l,soma:l.reduce(function(a,i){return a+i.qtd*i.preco},0)};
+    }).filter(function(g){return g.linhas.length});
+    var soma=gs.reduce(function(a,g){return a+g.soma},0);
+    var desc=E.desconto.tipo==='%'?Math.round(soma*E.desconto.valor/100):Math.round(E.desconto.valor);
+    if(desc>soma)desc=soma;
+    return {gs:gs,soma:soma,desc:desc,total:soma-desc,n:E.itens.length};
+  }
+
+  // ---- desenho ----
+  function ficha(){
+    var o=D.orcamento;
+    var d=o.data_evento?o.data_evento.split('-').reverse().join('/'):null;
+    var campos=[['Cliente',o.cliente],['Evento',o.evento],['Espaço',o.espaco],
+      ['Data',d],['Convidados',o.convidados],['Orçamento',o.numero]];
+    q('[data-ficha]').innerHTML='<div class="ficha-g">'+campos.filter(function(c){return c[1]})
+      .map(function(c){return '<div><span>'+esc(c[0])+'</span><b>'+esc(c[1])+'</b></div>'}).join('')+'</div>';
+  }
+  function linhaHTML(i){
+    if(editando){
+      return '<div class="ln-it ed" data-it="'+esc(i.id)+'">'+
+        '<input class="in-nome" data-c="nome" value="'+esc(i.nome)+'" aria-label="Nome do item">'+
+        '<div class="ln-nums">'+
+          '<label><span>qtd</span><input class="in-qtd" data-c="qtd" type="number" min="0" step="1" value="'+i.qtd+'"></label>'+
+          '<label><span>valor un.</span><input class="in-preco" data-c="preco" inputmode="decimal" value="'+(i.preco/100).toFixed(2).replace('.',',')+'"></label>'+
+          '<label><span>unidade</span><input class="in-un" data-c="un" value="'+esc(i.un)+'"></label>'+
+        '</div>'+
+        '<b class="ln-tot"></b>'+
+        '<button type="button" class="qt-x" data-remover="'+esc(i.id)+'">apagar</button></div>';
+    }
+    return '<div class="ln-it" data-it="'+esc(i.id)+'">'+
+      '<div class="ln-n"><b>'+esc(i.nome)+'</b><span>'+i.qtd+' '+esc(i.un)+(i.qtd>1?'s':'')+' × '+fmt(i.preco)+'</span></div>'+
+      '<b class="ln-tot"></b></div>';
+  }
+  function desenhar(){
+    q('[data-grupos]').innerHTML=calc().gs.map(function(g){
+      return '<div class="grp"><h3>'+esc(g.titulo)+'</h3><div class="grp-itens">'+
+        g.linhas.map(linhaHTML).join('')+
+        (editando?'<button type="button" class="add" data-add="'+esc(g.id)+'">+ Acrescentar item em '+esc(g.titulo)+'</button>':'')+
+        '</div><div class="grp-sub"><span>Subtotal '+esc(g.titulo)+'</span><b>'+fmt(g.soma)+'</b></div></div>';
+    }).join('');
+    pintar();
+  }
+  function pintar(){
+    var r=calc();
+    raiz.querySelectorAll('[data-it]').forEach(function(el){
+      var i=acha(E.itens,el.dataset.it); if(!i)return;
+      el.querySelector('.ln-tot').textContent=fmt(i.qtd*i.preco);
+    });
+    raiz.querySelectorAll('.grp').forEach(function(el,n){
+      var g=r.gs[n]; if(g)el.querySelector('.grp-sub b').textContent=fmt(g.soma);
+    });
+    q('[data-soma]').textContent=fmt(r.soma);
+    q('[data-desc-calc]').textContent=(r.desc?'− ':'')+fmt(r.desc);
+    q('[data-total]').textContent=fmt0(r.total);
+    var conv=D.orcamento.convidados;
+    q('[data-pp]').textContent=conv?fmt(Math.round(r.total/conv))+' por convidado · '+r.n+' itens':r.n+' itens';
+    var dt=q('[data-desc-tipo]'),dv=q('[data-desc-valor]');
+    if(dt.value!==E.desconto.tipo)dt.value=E.desconto.tipo;
+    if(document.activeElement!==dv)dv.value=E.desconto.tipo==='%'?String(E.desconto.valor).replace('.',',')
+      :(E.desconto.valor/100).toFixed(2).replace('.',',');
+    var v=q('[data-validade]');
+    if(v&&D.orcamento.validade){var dd=D.orcamento.validade.split('-');v.textContent=dd[2]+'/'+dd[1]+'/'+dd[0]}
+    guardar();
+  }
+
+  // ---- acoes ----
+  function mensagem(txt,valor){
+    q('[data-inv-msg]').innerHTML=esc(txt)+(valor?'<input readonly value="'+esc(valor)+'">':'');
+    var c=q('[data-inv-msg] input'); if(c)c.addEventListener('focus',function(){this.select()});
+  }
+  function copiarTexto(v,ok){
+    if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(v).then(ok,ok);else ok();
+  }
+  function urlAtual(){
+    var base=location.href.split('?')[0].split('#')[0];
+    var mudou=JSON.stringify(E)!==JSON.stringify({itens:D.itens,desconto:D.desconto});
+    return base+(mudou?'#p='+b64(JSON.stringify(E)):'');
+  }
+  function resumo(){
+    var r=calc(),o=D.orcamento;
+    var t=['Orçamento '+o.numero+' · '+o.cliente,o.evento+' · '+o.espaco+
+      (o.data_evento?' · '+o.data_evento.split('-').reverse().join('/'):'')+' · '+o.convidados+' convidados'];
+    r.gs.forEach(function(g){
+      t.push('');t.push(g.titulo.toUpperCase());
+      g.linhas.forEach(function(i){t.push('  '+i.nome+' — '+i.qtd+' × '+fmt(i.preco)+' = '+fmt(i.qtd*i.preco))});
+      t.push('  Subtotal: '+fmt(g.soma));
+    });
+    t.push('');t.push('Soma dos itens: '+fmt(r.soma));
+    if(r.desc)t.push('Desconto: − '+fmt(r.desc));
+    t.push('TOTAL: '+fmt(r.total));
+    return t.join('\n');
+  }
+  function modoEditar(on){
+    editando=on;
+    var b=q('[data-editar]');
+    b.classList.toggle('on',on);b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Pronto':'Editar';
+    q('.inv-extra').hidden=!on;
+    raiz.classList.toggle('editando',on);
+    desenhar();
+  }
+  function gerarPDF(){
+    if(editando)modoEditar(false);
+    document.body.classList.add('imprimindo');
+    mensagem('Na janela que abrir, escolha "Salvar como PDF" no destino.');
+    setTimeout(function(){window.print();},120);
+  }
+  window.addEventListener('afterprint',function(){document.body.classList.remove('imprimindo')});
+
+  raiz.addEventListener('click',function(e){
+    var t=e.target;
+    var rm=t.closest('[data-remover]');
+    if(rm){
+      var i=acha(E.itens,rm.dataset.remover);
+      if(i&&confirm('Apagar "'+i.nome+'" do orçamento?')){E.itens.splice(E.itens.indexOf(i),1);desenhar()}
+      return;
+    }
+    var ad=t.closest('[data-add]');
+    if(ad){
+      E.itens.push({id:'n'+Date.now().toString(36),grupo:ad.dataset.add,nome:'Novo item',un:'unidade',qtd:1,preco:0});
+      desenhar();
+      var ns=raiz.querySelectorAll('.ln-it.ed .in-nome');
+      var u=ns[ns.length-1]; if(u){u.focus();u.select()}
+      return;
+    }
+    if(t.closest('[data-editar]')){modoEditar(!editando);return}
+    if(t.closest('[data-pdf]')){gerarPDF();return}
+    if(t.closest('[data-link]')){var u2=urlAtual();copiarTexto(u2,function(){mensagem('Link copiado.',u2)});return}
+    if(t.closest('[data-copiar]')){copiarTexto(resumo(),function(){mensagem('Resumo copiado.')});return}
+    if(t.closest('[data-zerar]')){
+      if(!confirm('Voltar ao orçamento como está no CRM? As alterações desta tela se perdem.'))return;
+      E={itens:clone(D.itens),desconto:clone(D.desconto)};
+      try{localStorage.removeItem('algar-orcamento')}catch(e){}
+      if(location.hash)history.replaceState(null,'',location.pathname+location.search);
+      desenhar();mensagem('De volta ao orçamento do CRM.');
+      return;
+    }
+  });
+  raiz.addEventListener('input',function(e){
+    var el=e.target;
+    if(el.hasAttribute('data-desc-valor')){
+      E.desconto.valor=E.desconto.tipo==='%'?numBR(el.value):Math.round(numBR(el.value)*100);
+      if(E.desconto.valor<0)E.desconto.valor=0;
+      pintar();return;
+    }
+    var c=el.dataset.c; if(!c)return;
+    var linha=el.closest('[data-it]'); if(!linha)return;
+    var i=acha(E.itens,linha.dataset.it); if(!i)return;
+    if(c==='preco')i.preco=Math.max(0,Math.round(numBR(el.value)*100));
+    else if(c==='qtd'){var k=parseInt(el.value,10);i.qtd=isNaN(k)?0:Math.max(0,k)}
+    else i[c]=el.value;
+    pintar();
+  });
+  raiz.addEventListener('change',function(e){
+    if(e.target.hasAttribute('data-desc-tipo')){
+      E.desconto.tipo=e.target.value;E.desconto.valor=0;pintar();
+    }
+  });
+
+  ficha();desenhar();
 })();
 
 </script>
